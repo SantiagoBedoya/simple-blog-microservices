@@ -15,6 +15,7 @@ async function bootstrap() {
       queue: process.env.RMQ_POSTS_QUEUE || 'events',
     },
   });
+  app.enableShutdownHooks();
 
   await app.startAllMicroservices();
   const port = process.env.PORT || 3002;
