@@ -17,7 +17,7 @@ spec:
           image: sba10/blog_query:0.0.1
           env:
             - name: RMQ_URL
-              value: "amqps://zftoopxi:yOVEFq9ifu2Io94GKJM0UfJJumROtvx8@beaver.rmq.cloudamqp.com/zftoopxi"
+              value: "amqp://rabbitmq-service:5672"
 ---
 apiVersion: v1
 kind: Service
