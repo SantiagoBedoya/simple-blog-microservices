@@ -1,0 +1,13 @@
+@BASE_URL=http://localhost:3001
+
+###
+GET {{BASE_URL}}/comments?post_id=3a28c463 HTTP/1.1
+
+###
+POST {{BASE_URL}}/comments HTTP/1.1
+Content-Type: application/json
+
+{
+  "comment": "comment 2 with orange",
+  "postId": "e62089ea"
+}
