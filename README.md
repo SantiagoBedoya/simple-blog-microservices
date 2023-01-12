@@ -3,5 +3,8 @@
 ## How to run
 
 1. You must have installed docker [Get Docker](https://docs.docker.com/get-docker/)
+2. Execute docker
 
-2. docker-compose up
+```bash
+docker-compose up --build -d
+```
