@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: query
+  template:
+    metadata:
+      labels:
+        app: query
+    spec:
+      containers:
+        - name: query
+          image: sba10/blog_query:0.0.1
+          env:
+            - name: RMQ_URL
+              value: "amqps://zftoopxi:yOVEFq9ifu2Io94GKJM0UfJJumROtvx8@beaver.rmq.cloudamqp.com/zftoopxi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: query-service
+spec:
+  selector:
+    app: query
+  ports:
+    - name: query
+      protocol: TCP
+      port: 3002
+      targetPort: 3002

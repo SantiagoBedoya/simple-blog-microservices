@@ -2,7 +2,7 @@ FROM node:18 AS build
 ENV NODE_ENV=development
 WORKDIR /app
 COPY package*.json ./
-RUN yarn install --prod
+RUN yarn install
 
 COPY . .
 RUN npm run build
